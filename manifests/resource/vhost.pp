@@ -135,6 +135,7 @@ define nginx::resource::vhost (
   $access_log             = undef,
   $error_log              = undef,
   $passenger_cgi_param    = undef,
+  $autoindex              = undef,
   $use_default_location   = true,
 ) {
 
@@ -143,7 +144,10 @@ define nginx::resource::vhost (
   validate_array($proxy_set_header)
   validate_array($index_files)
   validate_array($server_name)
-
+  if ($autoindex != undef) {
+    validate_string($autoindex)
+  }
+  
   File {
     ensure => $ensure ? {
       'absent' => absent,
