@@ -14,9 +14,6 @@
 <% if @try_files -%>
     try_files <% @try_files.each do |try| -%> <%= try %> <% end -%>;
 <% end -%>
-<% if @rewrite -%>
-    rewrite <%= @rewrite %>;
-<% end -%>
 <% if @autoindex == 'on' -%>
     autoindex on;
 <% end -%>

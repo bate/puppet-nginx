@@ -109,7 +109,6 @@ define nginx::resource::location (
   $location_cfg_prepend = undef,
   $location_cfg_append  = undef,
   $try_files            = undef,
-  $rewrite              = undef,
   $proxy_cache          = false,
   $proxy_cache_valid    = false,
   $auth_basic           = undef,
